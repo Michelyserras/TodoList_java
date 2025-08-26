@@ -3,6 +3,7 @@ package Model;
 import java.util.*;
 
 public class Task {
+    private int id;
     private String nome;
     private Date dataInicio;
     private Date dataTermino;
@@ -12,6 +13,7 @@ public class Task {
 
 
     public Task(String nome, Date dataInicio, Date dataTermino, int prioridade, Status status, Categoria categoria) {
+        this.id = id;
         this.nome = nome;
         this.dataInicio = dataInicio;
         this.dataTermino = dataTermino;
@@ -66,5 +68,13 @@ public class Task {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

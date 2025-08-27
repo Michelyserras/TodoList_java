@@ -9,6 +9,11 @@ public class TodoList {
     private List<Task> tarefas;
 
 
+    public TodoList(String nome){
+        this.nome = nome;
+        this.tarefas = new ArrayList<>();
+    }
+
     public TodoList(String nome, List<Task> tarefas) {
         this.nome = nome;
         this.tarefas = new ArrayList<>();

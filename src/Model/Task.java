@@ -6,17 +6,17 @@ import java.util.*;
 public class Task {
     private int id;
     private String nome;
-    private String descrição;
+    private String descricao;
     private LocalDate dataTermino;
     private int prioridade;
     private Status status;
     private String categoria;
 
 
-    public Task(String nome, String descrição, LocalDate dataTermino, int prioridade, Status status, String categoria) {
+    public Task(String nome, String descricao, LocalDate dataTermino, int prioridade, Status status, String categoria) {
         this.id = id;
         this.nome = nome;
-        this.descrição = descrição;
+        this.descricao = descricao;
         this.dataTermino = dataTermino;
         this.prioridade = prioridade;
         this.status = status;
@@ -31,9 +31,9 @@ public class Task {
         this.nome = nome;
     }
 
-    public String getDescrição() { return descrição; }
+    public String getDescricao() { return descricao; }
 
-    public void setDescrição(String descrição) { this.descrição = descrição; }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
 
     public LocalDate getDataTermino() {
         return dataTermino;
@@ -75,7 +75,7 @@ public class Task {
     public String toString() {
         return "Task{id=" + id +
                 ", nome='" + nome + '\'' +
-                ", descrição=" + descrição +
+                ", descricao=" + descricao +
                 ", prioridade=" + prioridade +
                 ", categoria='" + categoria + '\'' +
                 ", status=" + status + '}';

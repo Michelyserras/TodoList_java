@@ -1,21 +1,22 @@
 package Model;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class Task {
     private int id;
     private String nome;
-    private Date dataInicio;
-    private Date dataTermino;
+    private String descrição;
+    private LocalDate dataTermino;
     private int prioridade;
     private Status status;
-    private Categoria categoria;
+    private String categoria;
 
 
-    public Task(String nome, Date dataInicio, Date dataTermino, int prioridade, Status status, Categoria categoria) {
+    public Task(String nome, String descrição, LocalDate dataTermino, int prioridade, Status status, String categoria) {
         this.id = id;
         this.nome = nome;
-        this.dataInicio = dataInicio;
+        this.descrição = descrição;
         this.dataTermino = dataTermino;
         this.prioridade = prioridade;
         this.status = status;
@@ -30,19 +31,15 @@ public class Task {
         this.nome = nome;
     }
 
-    public Date getDataInicio() {
-        return dataInicio;
-    }
+    public String getDescrição() { return descrição; }
 
-    public void setDataInicio(Date dataInicio) {
-        this.dataInicio = dataInicio;
-    }
+    public void setDescrição(String descrição) { this.descrição = descrição; }
 
-    public Date getDataTermino() {
+    public LocalDate getDataTermino() {
         return dataTermino;
     }
 
-    public void setDataTermino(Date dataTermino) {
+    public void setDataTermino(LocalDate dataTermino) {
         this.dataTermino = dataTermino;
     }
 
@@ -62,19 +59,27 @@ public class Task {
         this.status = status;
     }
 
-    public Categoria getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(Categoria categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 
-    public int getId() {
-        return id;
+    public int getId() {return id;}
+
+    public void setId(int id) {this.id = id;}
+
+    @Override
+    public String toString() {
+        return "Task{id=" + id +
+                ", nome='" + nome + '\'' +
+                ", descrição=" + descrição +
+                ", prioridade=" + prioridade +
+                ", categoria='" + categoria + '\'' +
+                ", status=" + status + '}';
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 }

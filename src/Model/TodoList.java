@@ -8,6 +8,7 @@ public class TodoList {
     private String nome;
     private List<Task> tarefas;
 
+
     public TodoList(String nome, List<Task> tarefas) {
         this.nome = nome;
         this.tarefas = new ArrayList<>();
@@ -37,4 +38,18 @@ public class TodoList {
     public void removerTask(int id){
         tarefas.removeIf(task -> task.getId() == id);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Lista: ").append(nome).append("\n");
+        sb.append("Tarefas:\n");
+
+        for (Task task : tarefas) {
+            sb.append(" - ").append(task).append("\n"); // usa o toString da Task
+        }
+
+        return sb.toString();
+    }
+
 }

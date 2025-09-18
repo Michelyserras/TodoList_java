@@ -3,25 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../css/styles.css" type="text/css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/styles.css" type="text/css" />
 
     <title>TodoList</title>
   </head>
   <body>
     <header>
       <h1>Todo-List</h1>
+      <br>
     </header>
 
     <main>
-
       <section class="create-lists">
-        <form>
+        <form class="lists">
           <div class="input">
-            <label for="listas">Informe um nome para a lista</label>
-            <input type="text" />
+            <label for="listas" class="input-lista"
+              >Informe um nome para a lista: </label
+            >
+            <input type="text" class="nome-lista" />
           </div>
           <button type="submit" class="btn">Salvar</button>
         </form>
+
+        <hr>
       </section>
 
       <section class="todo-lists">
@@ -59,9 +69,7 @@
           </form>
         </dialog>
 
-        <ul class="tasks-todoList">
-
-        </ul>
+        <ul class="tasks-todoList"></ul>
       </section>
     </main>
   </body>

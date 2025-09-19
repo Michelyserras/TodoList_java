@@ -38,18 +38,161 @@ main {
   flex: 1;
 }
 
-.input-lista{
-    height: 2rem;
+.input-lista {
+  height: 2rem;
 }
 
-.nome-lista{
-    height: 2rem;
+.nome-lista {
+  height: 2rem;
 }
 
-.btn-create{
+.btn-create {
   height: 2rem;
   padding-inline: 0.75rem;
   background-color: var(--primary-color);
   color: var(--foreground-color);
   border-radius: 0.25rem;
 }
+
+/* estilos task form*/
+.dialog {
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 450px;
+  margin: auto;
+  width: 100%;
+  background: #f9f9f9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form-container {
+  width: 100%;
+}
+
+.input-task {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.form-container label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input,
+select,
+textarea {
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.btn-addTask {
+  margin-top: 15px;
+  grid-column: span 2;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #4caf50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-addTask:hover {
+  background: #45a049;
+}
+
+.btn-leaveTask {
+  margin-top: 15px;
+  grid-column: span 2;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #af574c;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-leaveTask:hover {
+  background: #a32e2e;
+}
+
+.btn-task {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* lista de tarefas*/
+
+.task-header {
+  display: flex;
+  justify-content: space-between; /* status de um lado, small do outro */
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+/* Badge do status */
+.status {
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+/* Nome da task (embaixo da badge) */
+.task-name {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+/* Info (data, categoria, prioridade) */
+.task-info {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.status.todo {
+  background: #edf2ff;
+  color: #3b5bdb;
+}
+.status.doing {
+  background: #fff3bf;
+  color: #f08c00;
+}
+.status.done {
+  background: #d3f9d8;
+  color: #2b8a3e;
+}
+
+/* Descrição */
+.task-item p {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+

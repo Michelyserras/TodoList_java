@@ -9,14 +9,18 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=add_2"
+    />
     <link rel="stylesheet" href="../css/styles.css" type="text/css" />
 
     <title>TodoList</title>
   </head>
   <body>
     <header>
-      <h1>Todo-List</h1>
-      <br>
+      <h1 class="titulo">Todo-List</h1>
+      <br />
     </header>
 
     <main>
@@ -24,32 +28,34 @@
         <form class="lists">
           <div class="input">
             <label for="listas" class="input-lista"
-              >Informe um nome para a lista: </label
-            >
+              >Informe um nome para a lista:
+            </label>
             <input type="text" class="nome-lista" />
           </div>
-          <button type="submit" class="btn">Salvar</button>
+          <button type="submit" class="btn-create" onclick="">Salvar</button>
         </form>
-
-        <hr>
       </section>
 
       <section class="todo-lists">
-        <ul></ul>
+        <ul class="ex-lists"></ul>
       </section>
 
-      <section class="create-task">
-        <dialog>
+      <section class="create-task" style="display: none;">
+        <div>
+            <button class="btn-newTask"><span class="material-symbols-outlined"> add_2 </span></button>
+            <span>Nova tarefa</span>
+        </div>
+        <dialog class=" dialog">
           <form action="#">
             <div class="input-task">
               <label for="name">Nome</label>
-              <input type="text" />
+              <input type="text" class="nome-task" />
               <label for="descricao">Descrição</label>
-              <textarea name="descricao" id="desc"></textarea>
+              <textarea name="descricao" class="desc"></textarea>
               <label for="dateTermino">Conclusão</label>
               <input type="datetime" name="dataTermino" class="dataTermino" />
               <label for="prioridade">Prioridade</label>
-              <select name="" id="">
+              <select class="prioridade">
                 <option value="prioridade">1</option>
                 <option value="prioridade">2</option>
                 <option value="prioridade">3</option>
@@ -65,12 +71,13 @@
               <label for="categoria">Categoria</label>
               <input type="text" name="categoria" class="categoria-task" />
             </div>
-            <button>Salvar</button>
+            <button class="btn-task">Salvar</button>
           </form>
         </dialog>
 
         <ul class="tasks-todoList"></ul>
       </section>
+      <script src="../js/scripts.js"></script>
     </main>
   </body>
 </html>

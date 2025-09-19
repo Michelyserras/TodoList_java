@@ -1,42 +1,55 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-:root{
-  --font:"Montserrat", sans-serif;
+:root {
+  --font: "Montserrat", sans-serif;
   --primary-color: #7fa7f0;
   --foreground-color: hwb(0 100% 0%);
   --hover-color: hsl(219, 79%, 62%);
-  --border-color:hsl(0, 0%, 57%);
+  --border-color: hsl(0, 0%, 57%);
 }
 
-body{
-    font-family: var(--font);
-    padding-top: 50px;
+body {
+  font-family: var(--font);
+  padding-top: 50px;
 }
 
-
-header, main{
-    max-width: 32rem;
-    margin: auto;
+header,
+main {
+  max-width: 32rem;
+  margin: auto;
 }
-
 
 /*Estilizando form para criar as listas*/
 
-.lists{
-    display: flex;
-    align-items: flex-end;
-    gap: 0.25rem;
-    /* border: 1px solid #7fa7f0; */
-    
+.lists {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.25rem;
+  /* border: 1px solid #7fa7f0; */
 }
 
-.lists div{
-    display: flex;
-    gap: 1.5rem;
+.input {
+  display: grid;
+  gap: 0.25rem;
+  flex: 1;
 }
 
+.input-lista{
+    height: 2rem;
+}
 
+.nome-lista{
+    height: 2rem;
+}
+
+.btn-create{
+  height: 2rem;
+  padding-inline: 0.75rem;
+  background-color: var(--primary-color);
+  color: var(--foreground-color);
+  border-radius: 0.25rem;
+}

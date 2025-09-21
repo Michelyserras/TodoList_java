@@ -7,9 +7,10 @@
 :root {
   --font: "Montserrat", sans-serif;
   --primary-color: #7fa7f0;
-  --foreground-color: hwb(0 100% 0%);
+  --foreground-color: #e0edfc;
   --hover-color: hsl(219, 79%, 62%);
   --border-color: hsl(0, 0%, 57%);
+  --secundary-color: hsl(180, 25%, 82%);
 }
 
 body {
@@ -20,16 +21,31 @@ body {
 header,
 main {
   max-width: 32rem;
-  margin: auto;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  gap: 3rem;
+  
+  margin-bottom: 2rem;
+}
+
+.card-list {
+  border: var(--border-color) 1px solid;
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /*Estilizando form para criar as listas*/
-
 .lists {
   display: flex;
   align-items: flex-end;
   gap: 0.25rem;
-  /* border: 1px solid #7fa7f0; */
 }
 
 .input {
@@ -52,6 +68,64 @@ main {
   background-color: var(--primary-color);
   color: var(--foreground-color);
   border-radius: 0.25rem;
+}
+
+.todo-lists {
+  margin-top: 2rem;
+}
+
+.ex-lists {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  max-width: 32rem;
+}
+
+.ex-lists li {
+  background: var(--foreground-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.ex-lists li:hover {
+  background: #eef3ff;
+  transform: translateX(3px);
+}
+
+/*cabeçalho tasks */
+
+.taskList-header {
+  width: 31rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+  gap: 5px;
+}
+
+.text {
+  font-family: var(--font);
+  font-weight: bold;
+}
+
+.btn-newTask,
+.btn-back {
+  border: none;
+  color: var(--foreground-color);
+  background-color: var(--primary-color);
+  border-radius: 5px;
 }
 
 /* estilos task form*/
@@ -147,8 +221,17 @@ textarea {
 
 /* lista de tarefas*/
 
+.tasks-todoList li {
+  margin-top: 3rem;
+  max-width: 32rem;
+  margin: 0 auto;
+  padding-top: 1rem;
+  list-style: none;
+}
+
 .task-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-bottom: 6px;
 }
@@ -194,4 +277,20 @@ textarea {
   margin-bottom: 8px;
 }
 
+.btn-edit {
+  border: none;
+  color: var(--foreground-color);
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  padding-inline: 0.75rem;
+  font-weight: 500;
+}
 
+.btn-delete {
+  border: none;
+  color: var(--foreground-color);
+  background-color: #af574c;
+  border-radius: 5px;
+  padding-inline: 0.75rem;
+  font-weight: 500;
+}

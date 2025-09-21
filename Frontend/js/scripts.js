@@ -3,7 +3,10 @@ let listaAtual = null;
 
 const formListas = document.querySelector(".lists");
 const formTask = document.querySelector(".create-task");
+const exLists = document.querySelector(".ex-lists");
 const exTasks = document.querySelector(".tasks-todoList");
+
+// criando nova lista
 
 formListas.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -29,7 +32,7 @@ formListas.addEventListener("submit", function (event) {
     listas.push(novaLista);
     nomeListaInput.value = "";
 
-    const ul = document.querySelector(".todo-lists ul");
+    const ul = document.querySelector(".ex-lists");
     ul.appendChild(lista);
   } else {
     alert("Por favor, insira um nome para a lista.");
@@ -42,8 +45,9 @@ function verlista(lista) {
   const titulo = document.querySelector(".titulo");
   titulo.textContent = lista.nome;
 
-  formListas.style.display = "none";
 
+  formListas.style.display = "none";
+  exLists.style.display = "none";
   formTask.style.display = "block";
 }
 
@@ -63,6 +67,7 @@ btnLeaveTask.addEventListener("click", function () {
 
 // adicionar nova tarefa
 const dialog = document.querySelector(".dialog");
+
 const btnAddTask = document.querySelector(".btn-addTask");
 btnAddTask.addEventListener("click", (e) => {
   e.preventDefault();
@@ -107,7 +112,6 @@ btnAddTask.addEventListener("click", (e) => {
       <button class="btn-delete" type="button">Excluir</button>
     </div>
 
-
   `;
 
   li.innerHTML = textoHTML;
@@ -129,3 +133,50 @@ function formatDate(dateStr) {
   const [year, month, day] = dateStr.split("-");
   return `${day}/${month}/${year}`;
 }
+
+// voltar para listas
+const btnBack = document.querySelector(".btn-back");
+btnBack.addEventListener("click", function () {
+  formListas.style.display = "block";
+  exLists.style.display = "block";
+  formTask.style.display = "none";
+  exTasks.innerHTML = "";
+  const titulo = document.querySelector(".titulo");
+  titulo.textContent = "Minhas listas";
+  listaAtual = null;
+});
+
+// editar tarefa
+exTasks.addEventListener("click", function (e) {
+  if (e.target.classList.contains("btn-edit")) {
+    const taskItem = e.target.closest(".task-item");
+    const taskName = taskItem.querySelector("strong").textContent;
+    const taskDescription = taskItem.querySelector("p").textContent;
+    const taskInfo = taskItem.querySelector(".task-info").textContent;
+    const status = taskItem.querySelector(".status").textContent;
+
+    const [datePart, categoryPart, priorityPart] = taskInfo
+      .split("|")
+      .map((part) => part.trim());
+    const [day, month, year] = datePart.split("/");
+    const dataTermino = `${year}-${month}-${day}`;
+    const categoria = categoryPart;
+    const prioridade = priorityPart.split(":")[1].trim();
+    document.querySelector(".nome-task").value = taskName;
+    document.querySelector(".descricao-task").value = taskDescription;
+    document.querySelector(".dataTermino").value = dataTermino;
+    document.querySelector(".categoria-task").value = categoria;
+    document.querySelector(".prioridade").value = prioridade;
+    document.querySelector(".status-task").value = status;
+    const dialog = document.querySelector(".dialog");
+    dialog.showModal();
+
+    taskItem.remove();
+  }
+
+  // excluir tarefa
+  if (e.target.classList.contains("btn-delete")) {
+    const taskItem = e.target.closest(".task-item");
+    taskItem.remove();
+  }
+});
